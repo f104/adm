@@ -56,7 +56,7 @@
                                     // save perms as obj for fast search
                                     for (var i = 0; i < response.perms.length; i++) {
                                         var key = response.perms[i]
-                                        this.$root.store.perms[key] = true
+                                        this.$set(this.$root.store.perms, key, true)
                                     }
                                 }
                                 this.$root.store.init = true

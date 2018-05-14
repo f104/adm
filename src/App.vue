@@ -23,7 +23,8 @@
                     // save perms as obj for fast search
                     for (var i = 0; i < response.perms.length; i++) {
                         var key = response.perms[i]
-                        this.$root.store.perms[key] = true
+                        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+                        this.$set(this.$root.store.perms, key, true)
                     }
                 }
                 this.$root.store.init = true
@@ -33,6 +34,9 @@
 </script>
 
 <style>
+    html {
+        overflow-y: scroll;
+    }
     html, body {
         padding: 0;
         margin: 0;
@@ -55,5 +59,8 @@
     }
     .el-table {
         width: 100%;
+    }
+    .nowrap {
+        white-space: nowrap;
     }
 </style>

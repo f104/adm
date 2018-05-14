@@ -22,7 +22,7 @@
                                :label="year.label" 
                                :value="year.value"
                                :key="year.value"></el-option>
-                </el-select>                    
+                </el-select>
                 <el-select placeholder="Окончание производства" v-model="fields.gen_finish">
                     <el-option v-for="year in yearsFinish" 
                                :label="year.label" 

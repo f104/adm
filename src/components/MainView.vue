@@ -5,7 +5,7 @@
                 <MenuView/>
             </div>
             <div class="aside-footer">
-                <ClearcacheView v-if="allowClearCache"/>
+                <ClearcacheView v-if="$root.store.perms.is_root||$root.store.perms.clear_cache"/>
                 <LogoutView/>
             </div>
         </el-aside>
@@ -26,11 +26,6 @@
             LogoutView,
             ClearcacheView,
         },
-        computed: {
-            allowClearCache: function() { 
-                return this.checkPerm('clear_cache') 
-            },
-        }
     }
 </script>
 

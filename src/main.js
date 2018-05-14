@@ -66,7 +66,7 @@ Vue.mixin({
             this.log(response)
         },
         checkPerm: function (perm) {
-            return this.$root.store.perms['is_root'] || this.$root.store.perms[perm]
+            return this.$root.store.perms.is_root || this.$root.store.perms[perm]
         },
         nl2br: function (value) {
             if (!value) return ''
@@ -83,6 +83,7 @@ var store = {
         sid: null,
     },
     init: false,
+    test: false,
     login () {
         this.auth = true
     },
@@ -104,10 +105,10 @@ var vm = new Vue({
         }
     },
 //    computed: {
-//        uid: () => { 
-//                return this.$cookie.get('uid') || null 
+//        perms: function () {
+//                return this.store.perms
 //            },
-//        sid: () => { return this.$cookie.get('sid') || null },
+////        sid: () => { return this.$cookie.get('sid') || null },
 //    },
 //    computed: {
 //    upperCase: () => {
