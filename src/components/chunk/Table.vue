@@ -81,8 +81,8 @@
     };
 </script>
 
-<style>
-    .el-table .cell {
+<style scoped>
+    .el-table >>> .cell {
         white-space: nowrap;
     }
 </style>

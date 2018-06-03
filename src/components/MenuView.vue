@@ -11,6 +11,9 @@
         <el-menu-item index="/eventlog" v-if="$root.store.perms.is_root||$root.store.perms.eventlog_view">
             <span>Журнал</span>
         </el-menu-item>
+        <el-menu-item index="/offices" v-if="$root.store.perms.is_root||$root.store.perms.offices_view">
+            <span>Офисы</span>
+        </el-menu-item>
     </el-menu>
 </template>
 
