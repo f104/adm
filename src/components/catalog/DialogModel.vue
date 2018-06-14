@@ -15,6 +15,18 @@
                     <template slot="prepend">{{ prepend }}</template>
                 </el-input>
             </el-form-item>
+            <el-form-item label="Title" prop="title">
+                <el-input v-model="fields.title"></el-input>
+            </el-form-item>
+            <el-form-item label="Keywords" prop="keywords">
+                <el-input v-model="fields.keywords"></el-input>
+            </el-form-item>
+            <el-form-item label="h1" prop="h1">
+                <el-input v-model="fields.h1"></el-input>
+            </el-form-item>
+            <el-form-item label="Description" prop="description">
+                <el-input v-model="fields.description"></el-input>
+            </el-form-item>
             <el-form-item label="Текст">
                 <el-input type="textarea" v-model="fields.content"
                     :autosize="{ minRows: 4, maxRows: 10}"></el-input>
@@ -128,12 +140,28 @@
                     mark_id: null,
                     model_key: null,
                     model_name: '',
+                    title: null,
+                    keywords: null,
+                    h1: null,
+                    description: null,
                     content: null,
                 },
                 errors: [],
                 rules: {
                     model_name: [
                         {type: 'string', required: true, trigger: 'blur'}
+                    ],
+                    title: [
+                        {type: 'string', required: false, max: 500, trigger: 'blur'}
+                    ],
+                    keywords: [
+                        {type: 'string', required: false, max: 500, trigger: 'blur'}
+                    ],
+                    h1: [
+                        {type: 'string', required: false, max: 500, trigger: 'blur'}
+                    ],
+                    description: [
+                        {type: 'string', required: false, max: 1000, trigger: 'blur'}
                     ],
                     content: [
                         {type: 'string', required: false, trigger: 'blur'}

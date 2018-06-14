@@ -30,6 +30,18 @@
                                :key="year.value"></el-option>
                 </el-select>                    
             </el-form-item>
+            <el-form-item label="Title" prop="title">
+                <el-input v-model="fields.title"></el-input>
+            </el-form-item>
+            <el-form-item label="Keywords" prop="keywords">
+                <el-input v-model="fields.keywords"></el-input>
+            </el-form-item>
+            <el-form-item label="h1" prop="h1">
+                <el-input v-model="fields.h1"></el-input>
+            </el-form-item>
+            <el-form-item label="Description" prop="description">
+                <el-input v-model="fields.description"></el-input>
+            </el-form-item>
             <el-form-item label="Текст">
                 <el-input type="textarea" v-model="fields.content"
                     :autosize="{ minRows: 4, maxRows: 10}"></el-input>
@@ -166,12 +178,28 @@
                     gen_name: '',
                     gen_start: null,
                     gen_finish: 0,
+                    title: null,
+                    keywords: null,
+                    h1: null,
+                    description: null,
                     content: null,
                 },
                 errors: [],
                 rules: {
                     gen_start: [
                         {type: 'number', required: true, trigger: 'blur'}
+                    ],
+                    title: [
+                        {type: 'string', required: false, max: 500, trigger: 'blur'}
+                    ],
+                    keywords: [
+                        {type: 'string', required: false, max: 500, trigger: 'blur'}
+                    ],
+                    h1: [
+                        {type: 'string', required: false, max: 500, trigger: 'blur'}
+                    ],
+                    description: [
+                        {type: 'string', required: false, max: 1000, trigger: 'blur'}
                     ],
                 },
             }
