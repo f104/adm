@@ -8,7 +8,6 @@
         name: 'ClearcacheView',
         computed: {
             allowClear: function() { 
-                console.log(this.checkPerm('clear_cache'))
                 return this.checkPerm('clear_cache') 
             },
         },

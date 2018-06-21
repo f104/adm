@@ -7,7 +7,8 @@ const IndexView = () => import('@/components/index/View.vue')
 const CatalogView = () => import('@/components/catalog/CatalogView.vue')
 const ChunkView = () => import('@/components/chunk/View.vue')
 const EventlogView = () => import('@/components/eventlog/View.vue')
-const OfficesView = () => import('@/components/offices/View.vue')
+const OfficesList = () => import('@/components/offices/List.vue')
+const OfficesOrder = () => import('@/components/offices/Order.vue')
 const NotFoundView = () => import('@/components/404/View.vue')
 
 export default new Router({
@@ -33,9 +34,14 @@ export default new Router({
       component: EventlogView
     },
     {
-      path: '/offices',
-      name: 'offices',
-      component: OfficesView
+      path: '/offices/list',
+      name: 'officesList',
+      component: OfficesList
+    },
+    {
+      path: '/offices/order',
+      name: 'officesOrder',
+      component: OfficesOrder
     },
     {
       path: '*',

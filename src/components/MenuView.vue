@@ -11,9 +11,17 @@
         <el-menu-item index="/eventlog" v-if="$root.store.perms.is_root||$root.store.perms.eventlog_view">
             <span>Журнал</span>
         </el-menu-item>
-        <el-menu-item index="/offices" v-if="$root.store.perms.is_root||$root.store.perms.offices_view">
-            <span>Офисы</span>
-        </el-menu-item>
+        <el-submenu v-if="$root.store.perms.is_root||$root.store.perms.offices_view">
+            <template slot="title">
+                <span>Офисы</span>
+            </template>
+            <el-menu-item index="/offices/list">
+                <span>Список</span>
+            </el-menu-item>
+            <el-menu-item index="/offices/order">
+                <span>Сортировка</span>
+            </el-menu-item>
+        </el-submenu>
     </el-menu>
 </template>
 
